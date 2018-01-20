@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>童伴</title>
+    <meta charset="gbk"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"></script>
+    <script type="text/javascript" src="share.js"></script>
+    <link rel="stylesheet" href="share.css" type="text/css" />
+</head>
+<body>
+<div data-role="page" id="home_page" data-theme="a|b|c|d|e" data-dom-cache="true">
+    <div data-role="header">
+        <h1 id="headerTitle">童伴</h1>
+    </div>
+    <div data-role="content">
+        <div >
+            <p id="activity_title" class="activity_title" align="center">活动标题</p>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                    <td height="50" align="center"><a href="#" target="_self"><img src="images/img_placeholder.png"></a><br /></td>
+                </tbody>
+            </table>
+        </div>
+        <ul data-role="listview">
+            <li id="activity_basic_info" data-role="list-divider"  class="colorGray">活动信息</li>
+            <li  data-icon="false"><a id="start_time" href="#">开始时间</a></li>
+            <li  data-icon="false"><a id="end_time" href="#">结束时间</a></li>
+            <li  data-icon="false"><a id="address" href="#">活动地点</a></li>
+            <li  data-icon="false"><a id="enroll_count" href="#">报名人数</a></li>
+            <li  data-icon="false"><a id="view_count" href="#">浏览次数</a></li>
+            <li  data-icon="false"><a id="contact_phone" href="#">联系电话</a></li>
+            <li id="activity_more_info" data-role="list-divider"   class="colorGray">更多描述</li>
+            <li><a id="a_intro" href="#contents_page">活动详细介绍</a></li>
+            <li><a id="a_path" href="#contents_page">路线描述</a></li>
+            <li><a id="a_payment" href="#contents_page">活动费用</a></li>
+            <li><a id="a_arrange" href="#contents_page">行程安排</a></li>
+            <li><a id="a_equipment" href="#contents_page">装备要求</a></li>
+        </ul>
+    </div>
+    <div data-role="footer"  data-position="fixed" data-theme="c">
+        <div data-role="navbar">
+            <li><a href="share.html" data-role="tab" data-icon="arrow-d">下载APP</a></li>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="contents_page" data-title="活动栏目的详情" data-theme="a|b|c|d|e" data-dom-cache="true">
+    <div data-role="header">
+        <a href="#" id="nav_back_btn" data-icon="arrow-l" class="back_btn" href="" data-role="button" data-rel="back" data-theme="x">返回</a>
+        <h1 id="contents_header_title">活动栏目名称</h1>
+    </div>
+    <p id="details_text">该活动是专门为小孩举办的有益于身心健康的活动，活动内容包括。。。。。。</p>
+    <div data-role="footer"  data-position="fixed" data-theme="c">
+        <div data-role="navbar">
+            <li><a href="share.html" data-role="tab" data-icon="arrow-d">下载APP</a></li>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.ShowUserChargesCtrl">
+<grid id="grid" model="${win$composer.charges}" mold="paging" width="700px">
+	<columns>
+		<column label="入资用户">
+		</column>
+		<column label="入资金额">
+        </column>
+		<column label="入资时间">
+		</column>
+	</columns>
+</grid>
+</window>
+</zk>

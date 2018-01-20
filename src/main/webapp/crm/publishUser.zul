@@ -1,0 +1,52 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.PublishUserViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	    <label value="名称"/>
+		    <textbox id="nameTextbox" width="380px" maxlength="20" value="${win$composer.userEntity.userName}" /> <label value="您最多可以输入20个字"/>
+		</row>
+		<row>
+		    <label value="手机号"/>
+		    <textbox id="cellphoneTextbox" width="380px" maxlength="200" value="${win$composer.userEntity.userCellphone}"/><label value="您最多可以输入200个字"/>
+		</row>
+        <row>
+            <label value="密码"/>
+            <textbox id="passwordTextbox" width="380px" maxlength="200" value="${win$composer.userEntity.userPassword}"/><label value="您最多可以输入200个字"/>
+        </row>
+        <row>
+            <label value="地址"/>
+            <textbox id="addressTextbox" width="380px" maxlength="100" value="${win$composer.userEntity.userAddress}"/><label value="您最多可以输入100个字"/>
+        </row>
+        <row>
+        	<label value="头像"/>
+        		<vlayout>
+                    <button id="fileuploadButtonSmall" label="Upload" upload="true">
+                    	<attribute name="onUpload">
+                    		org.zkoss.util.media.Media media = event.getMedia();
+                    		if (media instanceof org.zkoss.image.Image) {
+                    			org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+                    			picsSmall.setContent(img);
+                    		} else {
+                    			Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                    			break; //not to show too many errors
+                    		}
+                    	</attribute>
+                    </button>
+                    <image id="picsSmall" src="${win$composer.userEntity.userHeadimage}"/>
+            	</vlayout>
+        </row>
+	</rows>
+</grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

@@ -1,0 +1,27 @@
+<?page title="TFC引导页" contentType="text/html;charset=UTF-8"?>
+<zk>
+<grid mold="paging" width="700px">
+<columns width="700px">
+<column width="100px">
+</column>
+<column width="400px">
+</column>
+<column width="200px">
+</column>
+</columns>
+		<rows>
+		<row>
+		<label id="sentOK" value="发送成功" />
+		</row>
+			<row>
+			<label value="标题"/>
+			<textbox id="titleTextbox" width="380px"/> <label value="您最多可以输入20个字"/>
+			</row>
+			<row>
+			<label value="描述"/>
+			<textbox id="descriptionTextbox" rows="10" width="380px" /><label value="您最多可以输入100个字"/>
+			</row>
+		</rows>
+	</grid>
+	<button id="submitBtn" label="提交"/>
+</zk>

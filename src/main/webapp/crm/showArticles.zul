@@ -1,0 +1,15 @@
+<zk>
+    <window id="showArticlesWin" apply="com.mavenMVC.web.zk.ShowArticlesCtrl">
+<button id="insertArticle" label="新增文章"></button>
+<button id="search" label="刷新"></button>
+<grid id="grid" model="${showArticlesWin$composer.articles}" mold="paging" pageSize="10">
+    <columns>
+        <column label="标题"/>
+        <column label="状态"/>
+        <column label="URL"/>
+        <column label="操作"/>
+    </columns>
+
+</grid>
+    </window>
+</zk>

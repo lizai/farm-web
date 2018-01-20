@@ -1,0 +1,17 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.ShowTeacherClassesCtrl">
+<grid id="grid" model="${win$composer.classes}" mold="paging" width="700px">
+	<columns>
+		<column label="约课用户">
+		</column>
+		<column label="约课用户电话">
+        </column>
+		<column label="约课次数">
+		</column>
+		<column label="约课时间">
+		</column>
+	</columns>
+</grid>
+</window>
+</zk>

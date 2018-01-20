@@ -1,0 +1,40 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.PublishDishOrderViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	    <label value="id"/>
+		    <label id="idLabel" width="380px" maxlength="20" value="${win$composer.dishOrderEntity.dishOrderId}" />
+		</row>
+
+        <row>
+            <label value="用户"/>
+            <label id="nameLabel" width="380px" maxlength="20" value="${win$composer.userEntity.userName}"/>
+        </row>
+        <row>
+            <label value="价格"/>
+        	<label id="priceLabel" width="380px" />
+        </row>
+	</rows>
+</grid>
+<button id="insertDish" label="新增菜品"></button>
+<button id="search" label="刷新"></button>
+<grid id="grid" model="${win$composer.dishes}" mold="paging" pageSize="10">
+                <columns>
+                    <column label="菜品名称"/>
+                    <column label="菜品价格"/>
+                    <column label="操作"/>
+                </columns>
+            </grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

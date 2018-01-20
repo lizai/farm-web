@@ -1,0 +1,26 @@
+<zk>
+<window id="addWin"
+    apply="com.mavenMVC.web.zk.AddDishToOrderViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+	</columns>
+	<rows>
+		<row>
+        	<label value="菜品"/>
+        	<cell colspan="2">
+            	<selectbox id="dishSelectbox" model="${addWin$composer.todishes}">
+                	<template name="model">
+                		<label value="${each.dishName}" />
+                	</template>
+                </selectbox>
+            </cell>
+        </row>
+	</rows>
+</grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

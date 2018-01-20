@@ -1,0 +1,52 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.PublishDishViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	    <label value="名称"/>
+		    <textbox id="nameTextbox" width="380px" maxlength="20" value="${win$composer.dishEntity.dishName}" /> <label value="您最多可以输入20个字"/>
+		</row>
+		<row>
+		    <label value="价格"/>
+		    <intbox id="priceIntbox" width="380px" /><label value="只能输入数字"/>
+		</row>
+        <row>
+            <label value="类型"/>
+            <selectbox id="typeSelectbox" model="${win$composer.dishTypes}">
+                            	<template name="model">
+                            		<label value="${each.dishTypeName}" />
+                            	</template>
+                            </selectbox>
+        </row>
+        <row>
+        	<label value="图片"/>
+        		<vlayout>
+                    <button id="fileuploadButtonSmall" label="Upload" upload="true">
+                    	<attribute name="onUpload">
+                    		org.zkoss.util.media.Media media = event.getMedia();
+                    		if (media instanceof org.zkoss.image.Image) {
+                    			org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+                    			picsSmall.setContent(img);
+                    		} else {
+                    			Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                    			break; //not to show too many errors
+                    		}
+                    	</attribute>
+                    </button>
+                    <image id="picsSmall" src="${win$composer.dishEntity.dishImage}"/>
+            	</vlayout>
+        </row>
+	</rows>
+</grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

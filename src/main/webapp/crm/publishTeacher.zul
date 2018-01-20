@@ -1,0 +1,113 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.PublishTeacherViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	    <label value="名称"/>
+		    <textbox id="nameTextbox" width="380px" maxlength="20" value="${win$composer.teacherEntity.teacherName}" /> <label value="您最多可以输入20个字"/>
+		</row>
+		<row>
+		    <label value="手机号"/>
+		    <textbox id="cellphoneTextbox" width="380px" maxlength="200" value="${win$composer.teacherEntity.teacherCellphone}"/><label value="您最多可以输入200个字"/>
+		</row>
+		<row>
+		    <label value="性别"/>
+		    <cell colspan="2">
+		    <radiogroup id="sexRadio">
+            	<radio id="maleRadio" label="男" value="1" radiogroup="sexRadio"/>
+                <radio id="femaleRadio" label="女" value="2" radiogroup="sexRadio"/>
+            </radiogroup>
+            </cell>
+		</row>
+		<row>
+        	<label value="乐器"/>
+        	<cell colspan="2">
+            	<selectbox id="instrumentSelectbox" model="${win$composer.instruments}">
+                	<template name="model">
+                		<label value="${each.instrumentName}" />
+                	</template>
+                </selectbox>
+            </cell>
+        </row>
+        <row>
+            <label value="教师title"/>
+            <textbox id="titleTextbox" width="380px" maxlength="200" value="${win$composer.teacherEntity.teacherTitle}"/><label value="您最多可以输入200个字"/>
+        </row>
+        <row>
+        	<label value="头像"/>
+        		<vlayout>
+                    <button id="fileuploadButtonSmall" label="Upload" upload="true">
+                    	<attribute name="onUpload">
+                    		org.zkoss.util.media.Media media = event.getMedia();
+                    		if (media instanceof org.zkoss.image.Image) {
+                    			org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+                    			picsSmall.setContent(img);
+                    		} else {
+                    			Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                    			break; //not to show too many errors
+                    		}
+                    	</attribute>
+                    </button>
+                    <image id="picsSmall" src="${win$composer.teacherEntity.teacherHeadimage}"/>
+            	</vlayout>
+        </row>
+		<row>
+            <label value="课费"/>
+            <textbox id="costTextbox" width="380px" maxlength="100" value="${win$composer.teacherEntity.teacherMoney}"/><label value="您最多可以输入100个字"/>
+        </row>
+		<row>
+            <label value="地区"/>
+            <textbox id="addressTextbox" width="380px" maxlength="100" value="${win$composer.teacherEntity.teacherArea}"/><label value="您最多可以输入100个字"/>
+        </row>
+        <row>
+            <label value="获奖情况"/>
+            <textbox id="awardTextbox" width="380px" value="${win$composer.teacherEntity.teacherAward}"/>
+        </row>
+        <row>
+            <label value="学生获奖情况"/>
+            <textbox id="studentAwardTextbox" width="380px" value="${win$composer.teacherEntity.teacherStudentAward}"/>
+        </row>
+        <row>
+            <label value="教育情况"/>
+            <textbox id="educationTextbox" width="380px" value="${win$composer.teacherEntity.teacherEducation}"/>
+        </row>
+        <row>
+            <label value="擅长作品"/>
+            <textbox id="goodatTextbox" width="380px" value="${win$composer.teacherEntity.teacherGoodat}"/>
+        </row>
+        <row>
+            <label value="其他描述"/>
+            <textbox id="descriptionTextbox" rows="3"  width="380px" value="${win$composer.teacherEntity.teacherDescription}"/>
+        </row>
+        <row>
+        	<label value="演出照片"/>
+        		<vlayout>
+                    <button id="fileuploadButton" label="Upload" upload="true">
+                    	<attribute name="onUpload">
+                    		org.zkoss.util.media.Media media = event.getMedia();
+                    		if (media instanceof org.zkoss.image.Image) {
+                    			org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+                    			pics.setContent(img);
+                    		} else {
+                    			Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                    			break; //not to show too many errors
+                    		}
+                    	</attribute>
+                    </button>
+                    <image id="pics" src="${win$composer.teacherEntity.teacherPhoto}"/>
+            	</vlayout>
+        </row>
+	</rows>
+</grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

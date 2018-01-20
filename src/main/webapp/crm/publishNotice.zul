@@ -1,0 +1,27 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.PublishNoticeCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	        <label value="标题"/>
+		    <textbox id="titleTextbox" width="380px" maxlength="20" /> <label value="您最多可以输入20个字"/>
+		</row>
+		<row>
+            <label value="内容"/>
+        	<textbox id="contentTextbox" rows="7" width="380px" maxlength="100" /> <label value="您最多可以输入100个字"/>
+        </row>
+	</rows>
+</grid>
+<button id="publishToUsers" label="给用户发消息"/>
+<button id="publishToOrgs" label="给机构发消息"/>
+</window>
+</zk>

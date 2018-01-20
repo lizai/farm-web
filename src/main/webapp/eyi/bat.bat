@@ -1,0 +1,1 @@
+sass --watch --style compact sass/index.scss:css/index.css

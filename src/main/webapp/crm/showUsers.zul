@@ -1,0 +1,17 @@
+<zk>
+    <window id="showUsersWin" apply="com.mavenMVC.web.zk.ShowUsersCtrl">
+<button id="insertUser" label="新增用户"></button>
+<button id="search" label="刷新"></button>
+<grid id="grid" model="${showUsersWin$composer.users}" mold="paging" pageSize="10">
+    <columns>
+        <column label="姓名"/>
+        <column label="手机号"/>
+        <column label="用户地址"/>
+        <column label="用户余额"/>
+        <column label="是否登录"/>
+        <column label="操作"/>
+    </columns>
+
+</grid>
+    </window>
+</zk>

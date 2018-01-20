@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bean头部 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+            http://www.springframework.org/schema/task
+            http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+    <!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 需要更改 -->
+    <context:component-scan base-package="com.mavenMVC" />
+
+    <!-- 激活@Controller模式 -->
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="com.mavenMVC.authorization.resolvers.CurrentUserMethodArgumentResolver"></bean>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+    <!-- 定时任务处理 -->
+    <task:annotation-driven/>
+    <!-- 静态资源处理 -->
+    <mvc:default-servlet-handler/>
+
+    <mvc:interceptors>
+        <!-- 多个拦截器,顺序执行 -->
+        <bean class="com.mavenMVC.authorization.interceptor.AuthorizationInterceptor"></bean>
+    </mvc:interceptors>
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+    <bean class="com.mavenMVC.core.SwaggerConfig" />
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为10MB -->
+        <property name="maxUploadSize">
+            <value>10485760</value>
+        </property>
+    </bean>
+
+</beans>

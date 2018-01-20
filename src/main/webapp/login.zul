@@ -1,0 +1,29 @@
+<?page id="testZul" title="业务系统登录"?>
+<zk>
+<window title="Secure Page" border="normal" position="center"  mode="overlapped" width="500px" xmlns:h="http://www.zkoss.org/2005/zk/native">
+	    <!-- this form-login-page form is also used as the
+	         form-error-page to ask for a login again. -->
+	    <html style="color:red" if="${not empty param.login_error}">
+	      <![CDATA[
+	        	登录失败，请重新尝试.<br/><br/>
+	        	失败原因: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+	       ]]>
+	    </html>
+	
+		<groupbox>
+		<caption>登录</caption>
+	    <h:form id="f" name="f" action="j_spring_security_check" method="POST" pageEncoding="UTF-8">
+	    	<grid>
+	    		<rows>
+	    			<row>用户名: <textbox id="u" name="j_username"/></row>
+	    			<row>密码: <textbox id="p" type="password" name="j_password"/></row>
+	    			<row spans="2"><hbox>
+	    				<h:input type="submit" value="登录"/>
+	  	  				<h:input type="reset" value="重置"/>
+	    			</hbox></row>
+	    		</rows>
+	    	</grid>
+	    </h:form>
+	    </groupbox>
+	</window>
+	</zk>

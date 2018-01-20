@@ -1,0 +1,48 @@
+<zk>
+<window id="articlewin"
+    apply="com.mavenMVC.web.zk.PublishArticleViewCtrl">
+<grid mold="paging" width="700px">
+	<columns width="700px">
+		<column width="100px">
+		</column>
+		<column width="400px">
+		</column>
+		<column width="200px">
+		</column>
+	</columns>
+	<rows>
+        <row>
+	    <label value="标题"/>
+		    <textbox id="titleTextbox" width="380px" maxlength="20" value="${articlewin$composer.articleEntity.articleTitle}" /> <label value="您最多可以输入20个字"/>
+		</row>
+		<row>
+		    <label value="URL"/>
+		    <textbox id="urlTextbox" width="380px" maxlength="200" value="${articlewin$composer.articleEntity.articleUrl}"/><label value="您最多可以输入200个字"/>
+		</row>
+		<row>
+        	<label value="内容"/>
+        	<textbox id="contentTextbox" rows="3" width="380px" maxlength="200" value="${articlewin$composer.articleEntity.articleContent}"/><label value="您最多可以输入200个字"/>
+        </row>
+		<row>
+			<label value="文章图片"/>
+			<vlayout>
+            	<button id="fileuploadButton" label="Upload" upload="true">
+            		<attribute name="onUpload">
+            			org.zkoss.util.media.Media media = event.getMedia();
+            			if (media instanceof org.zkoss.image.Image) {
+            				org.zkoss.image.Image img = (org.zkoss.image.Image) media;
+            				pics.setContent(img);
+            			} else {
+            				Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+            				break; //not to show too many errors
+            			}
+            		</attribute>
+            	</button>
+            	<image id="pics" src="${articlewin$composer.articleEntity.articleImage}"/>
+            </vlayout>
+		</row>
+	</rows>
+</grid>
+<button id="submitBtn" label="提交"/>
+</window>
+</zk>

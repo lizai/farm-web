@@ -1,0 +1,17 @@
+<zk>
+<window id="win"
+    apply="com.mavenMVC.web.zk.ShowActivityParticipantCtrl">
+<grid id="grid" model="${win$composer.activityParticipants}" mold="paging" width="700px">
+	<columns>
+		<column label="报名用户">
+		</column>
+		<column label="报名用户手机号">
+		</column>
+		<column label="报名参与人数">
+		</column>
+		<column label="报名参与人详情">
+        </column>
+	</columns>
+</grid>
+</window>
+</zk>

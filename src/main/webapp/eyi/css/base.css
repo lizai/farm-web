@@ -1,0 +1,19 @@
+/*通用部分开始*/
+body{font-family:tohoma,'宋体',sans-serif;font-size:12px;}
+body,ul,ol,a,img,em,div,p,section,header,footer{margin:0;padding:0;}
+ul,ol{list-style:none;}
+a,img{border:none;}
+var,em{font-style:normal;}
+a,a:hover{text-decoration:none;}
+.clear{clear:both;height:0;font-size:0;line-height:0;}
+.clearfix:after{visibility: hidden;display: block;font-size: 0;content: ".";clear: both;height: 0;}
+* html .clearfix{zoom: 1;}
+*:first-child + html .clearfix{zoom: 1;}
+p{height: 100%;overflow: hidden;}
+img{width:100%;}
+li{ margin: 0;}
+ul li a{display:block;}
+li img{width:100%;}
+.fl{ float: left;}
+.fr{ float: right;}
+/*通用部分结束*/

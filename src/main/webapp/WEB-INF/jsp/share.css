@@ -1,0 +1,87 @@
+.ui-header{
+    background-color: #18a9e0;
+
+}
+
+body{
+    font-size: 110%;
+    color:#272727;
+    background-color: #f7f7f7;
+}
+
+h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 120%;
+    height: 20px;
+    color: #f7f5ea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.colorGray{
+    background-color: #666666;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+.activity{
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 95%;
+    line-height: 120%;
+    color:darkgray;
+}
+
+.activity_title{
+    font-size: 95%;
+    color:#000000;
+}
+
+.back_btn{
+    background-color: transparent;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+.ui-btn-corner-all {
+    border-radius: .5em;
+}
+
+.ui-bar-x {
+    border-top: 1px solid 		#FFFFFF ;
+    border-bottom: 1px solid	#FFFFFF ;
+    background: 				#FFFFFF /*{a-bar-background-color}*/;
+    color: 						#ffffff /*{a-bar-color}*/;
+    font-weight: bold;
+    text-shadow: 0 /*{a-bar-shadow-x}*/ -1px /*{a-bar-shadow-y}*/ rgba(0, 0, 0, .5) /*{a-bar-shadow-color}*/;
+    box-shadow: 0 1px rgba(24, 269, 224, .5);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF ), to(#FFFFFF )); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #FFFFFF , #FFFFFF ); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient(top, #FFFFFF , #FFFFFF ); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #FFFFFF , #FFFFFF ); /* IE10 */
+    background-image:      -o-linear-gradient(top, #FFFFFF , #FFFFFF ); /* Opera 11.10+ */
+    background-image:         linear-gradient(top, #FFFFFF , #FFFFFF );
+}
+
+.ui-btn-down-x .ui-btn-inner {
+    box-shadow: 0 -1px rgba(0, 0, 0, .5);
+}
+.ui-btn-down-x .ui-btn-text {
+    top:1px;
+}
+.ui-btn-down-x a.ui-link-inherit {
+    color: 					#ffffff /*{a-bdown-color}*/;
+}
+.ui-btn-up-x,
+.ui-btn-hover-x,
+.ui-btn-down-x {
+    font-family: Helvetica, Arial, sans-serif /*{a-button-font}*/;
+    text-decoration: none;
+}
